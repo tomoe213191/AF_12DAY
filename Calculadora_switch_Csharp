@@ -1,0 +1,44 @@
+using System;
+//INICIO
+class Program
+{
+    static void Main()
+    {
+        char op;
+        char pergunta = 's';
+        float num1, num2;
+
+        while (pergunta == 's')
+        {
+            Console.WriteLine("ENTRE COM O OPERADOR: +, -, *, /:");
+            op = Console.ReadLine()[0];
+
+            Console.WriteLine("ENTRE COM DOIS VALORES: ");
+            string[] valores = Console.ReadLine().Split(' ');
+            num1 = float.Parse(valores[0]);
+            num2 = float.Parse(valores[1]);
+
+            switch (op)
+            {
+                case '+':
+                    Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+                    break;
+                case '-':
+                    Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+                    break;
+                case '*':
+                    Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+                    break;
+                case '/':
+                    Console.WriteLine($"{num1} / {num2} = {num1 / num2}");
+                    break;
+                default:
+                    Console.WriteLine("OPERADOR ERRADO, POR FAVOR INSIRA O OPERADOR CORRETO");
+                    break;
+            }
+
+            Console.WriteLine("Continuar? ");
+            pergunta = Console.ReadLine()[0];
+        }
+    }
+}
